@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MasKos</string>
+    <string name="NamaResep">Nama Resep</string>
+    <string name="bahan">Bahan</string>
+</resources>
