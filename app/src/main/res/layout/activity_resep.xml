@@ -4,26 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResepActivity">
+    tools:context=".ResepActivity"
+    android:background="#ffca28">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
 
             <TextView
                 android:id="@+id/txt_namaresep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginVertical="10dp"
                 android:text="@string/NamaResep"
-                android:textSize="21sp"
-                android:textStyle="bold"/>
+                android:layout_gravity="center"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_detailresep"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/bakso_manis_pedas"
+                app:shapeAppearanceOverlay="@style/rounded"
+                app:strokeWidth="5dp"
+                app:strokeColor="@color/white"/>
 
             <TextView
                 android:id="@+id/txt_bahan"
@@ -32,16 +46,18 @@
                 android:layout_marginTop="20dp"
                 android:layout_margin="18dp"
                 android:textSize="20sp"
-                android:text="@string/bahan"/>
+                android:text="@string/bahan"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/txt_judulpembuatan"
+                android:id="@+id/txt_judulmetoderesep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/NamaResep"
+                android:text="Judul Metode Pembuatan"
                 android:textSize="21sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/txt_pembuatanresep"
@@ -50,7 +66,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_margin="18dp"
                 android:textSize="20sp"
-                android:text="@string/bahan"/>
+                android:text="Pembuatan"
+                android:textColor="@color/black"/>
 
 
         </LinearLayout>

@@ -36,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
-        myHolder.judulResep.setText(mData.get(i).getNamaResep());
+        myHolder.namaResep.setText(mData.get(i).getNamaResep());
 
         myHolder.img_resep_thumbnail.setImageResource(mData.get(i).getThumbnail());
 
@@ -45,9 +45,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ResepActivity.class);
 
+                intent.putExtra("gambar", mData.get(i).getThumbnail());
                 intent.putExtra("Nama", mData.get(i).getNamaResep());
                 intent.putExtra("Bahan", mData.get(i).getBahanResep());
-                intent.putExtra("judulresep", mData.get(i).getJudulResep());
+                intent.putExtra("judulmetoderesep", mData.get(i).getJudulMetodeResep());
                 intent.putExtra("pembuatanresep", mData.get(i).getPembuatanResep());
 
                 mContext.startActivity(intent);
@@ -61,7 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
-        TextView judulResep;
+        TextView namaResep;
         CardView cardView;
         ImageView img_resep_thumbnail;
 
@@ -69,7 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyHolder(@NonNull View itemView) {
             super(itemView);
 
-            judulResep = (TextView) itemView.findViewById(R.id.txt_namaresep);
+            namaResep = (TextView) itemView.findViewById(R.id.txt_resep);
             img_resep_thumbnail = (ImageView) itemView.findViewById(R.id.img_resep_id);
             cardView = (CardView) itemView.findViewById(R.id.cardview_id);
         }

@@ -4,15 +4,15 @@ public class Reseps {
     
     private String NamaResep;
     private String BahanResep;
-    private String JudulResep;
+    private String JudulMetodeResep;
     private String PembuatanResep;
     private int Thumbnail;
 
-    public Reseps(String namaResep, String bahanResep, String judulResep, String pembuatanResep, int thumbnail) {
+    public Reseps(String namaResep, String bahanResep, String judulMetodeResep, String pembuatanResep, int thumbnail) {
 
         NamaResep = namaResep;
         BahanResep = bahanResep;
-        JudulResep = judulResep;
+        JudulMetodeResep = judulMetodeResep;
         PembuatanResep = pembuatanResep;
         Thumbnail = thumbnail;
 
@@ -29,9 +29,9 @@ public class Reseps {
         return BahanResep;
     }
 
-    public String getJudulResep() {
+    public String getJudulMetodeResep() {
 
-        return JudulResep;
+        return JudulMetodeResep;
     }
 
     public String getPembuatanResep() {
