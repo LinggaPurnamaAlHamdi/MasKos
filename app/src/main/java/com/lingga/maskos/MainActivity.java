@@ -16,22 +16,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // MENGHUBUNGKAN LAYOUT DENGAN MAINACTIVITY
         setContentView(R.layout.splash_screen_logo);
+
+        // MENANGANI DURASI UNTUK MAIN AKTIVITY AGAR PINDAH KE CLASS LIST RESEP
+            // INISIALISASI HANDLER
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                // DEKLARASI INTENT DENGAN SET TUJUAN CLASS SETELAH DELAY BERAKHIR
                 Intent i = new Intent(MainActivity.this, ListResep.class);
                 startActivity(i);
                 finish();
             }
+            // MEMBERI NILAI DELAY DENGAN MILI DETIK
         }, 3000);
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent i = new Intent(SplashScreen.this, MainActivity.class);
-//                SplashScreen.this.startActivity(i);
-//                SplashScreen.this.finish();
-//            }
-//        }, 3000);
     }
 }

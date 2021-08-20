@@ -10,16 +10,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListResep extends AppCompatActivity {
+
+    // MEMBUAT DEKLARASI YANG DIBUTUHKAN
     RecyclerView myRecyclerView;
     RecyclerViewAdapter myAdapter;
-
     List<Reseps> reseps1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // MENGHUBUNGKAN LAYOUT DENGAN ListResep
         setContentView(R.layout.activity_main);
 
+        // MEMBUAT OBJECT ARRAY BARU
         reseps1 = new ArrayList<>();
+
+        // MENAMBAHKAN DATA LEWAT OBJECT BARU PADA CLASS RESEPS DENGAN MEMASUKAN SEMUA PARAMETER
         reseps1.add(new Reseps("Bakso Manis Pedas", "Bahan-bahan : \n" +
                 "- 300 gram bakso\n" +
                 "- 1 buah bawang bombai, cincang-cincang\n" +
@@ -245,12 +252,15 @@ public class ListResep extends AppCompatActivity {
                 "3. Masak bumbu sampai matang. Kemudian tambahkan sedikit minyak sayur dan aduk hingga merata.\n" +
                 "4. Setelah matang, terong balado siap disajikan", R.drawable.terong_balado));
 
+
+        // MENGHUBUNGKAN ID RECYCLEVIEW PADA LAYOUT
         myRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_id);
 
+        // MEMASUKAN DATA KEDALAM RECYLCLE VIEW
         myAdapter = new RecyclerViewAdapter(this, reseps1);
 
+        // MENGESET LAYOUT DAN MEMASUKAN SEMUA DATA MENJADI CARD
         myRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-
         myRecyclerView.setAdapter(myAdapter);
 
     }
